@@ -1,0 +1,393 @@
+<?php
+// List of MRT lines and SBS entities. Yet to include SBS Transit lines.
+
+/* for future optimization ewl and ccl arrays should be in correct direction */
+
+$nslmap = array(
+    
+    "JurongEast", 
+    "BukitBatok",
+    "BukitGombak",
+    "ChoaChuKang",
+    "YewTee",
+    "Kranji",
+    "Marsiling",
+    "Woodlands",
+    "Admiralty",
+    "Sembawang",
+    "Canberra",
+    "Yishun",
+    "Khatib",
+    "YioChuKang",
+    "AngMoKio",
+    "Bishan",
+    "Braddell",
+    "ToaPayoh",
+    "Novena",
+    "Newton",
+    "Orchard",
+    "Somerset",
+    "DhobyGhaut",
+    "CityHall",
+    "RafflesPlace",
+    "MarinaBay",
+    "MarinaSouthPier",
+    
+);
+
+$ewlmap = array(
+
+    "JooKoon",
+    "Pioneer",
+    "BoonLay",
+    "Lakeside",
+    "ChineseGarden",
+    "JurongEast",
+    "Clementi",
+    "Dover",
+    "BuonaVista",
+    "Commonwealth",
+    "Queenstown",
+    "Redhill",
+    "TiongBahru",
+    "OutramPark",
+    "TanjongPagar",
+    "RafflesPlace",
+    "CityHall",
+    "Bugis",
+    "Lavender",
+    "Kallang",
+    "Aljunied",
+    "PayaLebar",
+    "Eunos",
+    "Kembangan",
+    "Bedok",
+    "TanahMerah",
+    /* this is where the line splits. i would believe breakdowns affecting TanahMerah would affect both strips */
+    "Simei",
+    "Tampines",
+    "PasirRis",
+    "Expo",
+    "ChangiAirport",
+    
+);
+
+$cclmap = array (
+    
+    "HarbourFront",
+    "TelokBlangah",
+    "LabradorPark",
+    "PasirPanjang",
+    "HawParVilla",
+    "KentRidge",
+    "one-north",
+    "BuonaVista",
+    "HollandVillage",
+    "FarrerRoad",
+    "BotanicGardens",
+    "Caldecott",
+    "Marymount",
+    "Bishan",
+    "LorongChuan",
+    "Serangoon",
+    "Bartley",
+    "TaiSeng",
+    "MacPherson",
+    "PayaLebar",
+    "Dakota",
+    "Mountbatten",
+    "Stadium",
+    "NicollHighway",
+    "Promenade",
+    /* line splits here */
+    "Esplanade",
+    "BrasBasah",
+    "DhobyGhaut",
+    "Bayfront",
+    "MarinaBay",
+
+);
+
+$nelmap = array (
+    
+    "HarbourFront",
+    "OutramPark",
+    "Chinatown",
+    "ClarkeQuay",
+    "DhobyGhaut",
+    "LittleIndia",
+    "FarrerPark",
+    "BoonKeng",
+    "PotongPasir",
+    "Woodleigh",
+    "Serangoon",
+    "Kovan",
+    "Hougang",
+    "Buangkok",
+    "Sengkang",
+    "Punggol",
+
+);
+
+$nelunreadable = array (
+    
+        "NE00",
+        "NE01",
+        "NE02",
+        "NE03",
+        "NE04",
+        "NE05",
+        "NE06",
+        "NE07",
+        "NE08",
+        "NE09",
+        "NE10",
+        "NE11",
+        "NE12",
+        "NE13",
+        "NE14",
+        "NE15",
+        "NE16",
+        "NE17",
+
+);
+
+/*
+$nelunreadable = array (
+
+    array (
+        "NE0",
+        "NE1",
+        "NE2",
+        "NE3",
+        "NE4",
+        "NE5",
+        "NE6",
+        "NE7",
+        "NE8",
+        "NE9",
+        "NE10",
+        "NE11",
+        "NE12",
+        "NE13",
+        "NE14",
+        "NE15",
+        "NE16",
+        "NE17",
+),
+    
+    array (
+        "NE0",
+        "NE01",
+        "NE02",
+        "NE03",
+        "NE04",
+        "NE05",
+        "NE06",
+        "NE07",
+        "NE08",
+        "NE09",
+        "NE10",
+        "NE11",
+        "NE12",
+        "NE13",
+        "NE14",
+        "NE15",
+        "NE16",
+        "NE17",
+),
+
+    array (
+        "NE 0",
+        "NE 1",
+        "NE 2",
+        "NE 3",
+        "NE 4",
+        "NE 5",
+        "NE 6",
+        "NE 7",
+        "NE 8",
+        "NE 9",
+        "NE 10",
+        "NE 11",
+        "NE 12",
+        "NE 13",
+        "NE 14",
+        "NE 15",
+        "NE 16",
+        "NE 17",
+),
+    
+    array (
+        "NE 0",
+        "NE 01",
+        "NE 02",
+        "NE 03",
+        "NE 04",
+        "NE 05",
+        "NE 06",
+        "NE 07",
+        "NE 08",
+        "NE 09",
+        "NE 10",
+        "NE 11",
+        "NE 12",
+        "NE 13",
+        "NE 14",
+        "NE 15",
+        "NE 16",
+        "NE 17",
+),
+    
+
+);
+*/
+
+
+$dtlmap = array (
+    
+    "0",
+    "BukitPanjang",
+    "Cashew",
+    "Hillview",
+    "Hume",
+    "BeautyWorld",
+    "KingAlbertPark",
+    "SixthAvenue",
+    "TanKahKee",
+    "BotanicGardens",
+    "Stevens",
+    "Newton",
+    "LittleIndia",
+    "Rochor",
+    "Bugis",
+    "Promenade",
+    "Bayfront",
+    "Downtown",
+    "TelokAyer",
+    "Chinatown",
+
+);
+
+$dtlunreadable = array(
+
+        "DT00",
+        "DT01",
+        "DT02",
+        "DT03",
+        "DT04",
+        "DT05",
+        "DT06",
+        "DT07",
+        "DT08",
+        "DT09",
+        "DT10",
+        "DT11",
+        "DT12",
+        "DT13",
+        "DT14",
+        "DT15",
+        "DT16",
+        "DT17",
+        "DT18",
+        "DT19",
+
+);
+
+/*
+$dtlunreadable = array(
+
+    array(
+        "DT0",
+        "DT1",
+        "DT2",
+        "DT3",
+        "DT4",
+        "DT5",
+        "DT6",
+        "DT7",
+        "DT8",
+        "DT9",
+        "DT10",
+        "DT11",
+        "DT12",
+        "DT13",
+        "DT14",
+        "DT15",
+        "DT16",
+        "DT17",
+        "DT18",
+),
+    array(
+        "DT0",
+        "DT01",
+        "DT02",
+        "DT03",
+        "DT04",
+        "DT05",
+        "DT06",
+        "DT07",
+        "DT08",
+        "DT09",
+        "DT10",
+        "DT11",
+        "DT12",
+        "DT13",
+        "DT14",
+        "DT15",
+        "DT16",
+        "DT17",
+        "DT18",
+),
+    
+    array(
+        "DT 0",
+        "DT 1",
+        "DT 2",
+        "DT 3",
+        "DT 4",
+        "DT 5",
+        "DT 6",
+        "DT 7",
+        "DT 8",
+        "DT 9",
+        "DT 10",
+        "DT 11",
+        "DT 12",
+        "DT 13",
+        "DT 14",
+        "DT 15",
+        "DT 17",
+        "DT 18",
+        
+),
+    
+    array(
+        "DT 0",
+        "DT 01",
+        "DT 02",
+        "DT 03",
+        "DT 04",
+        "DT 05",
+        "DT 06",
+        "DT 07",
+        "DT 08",
+        "DT 09",
+        "DT 10",
+        "DT 11",
+        "DT 12",
+        "DT 13",
+        "DT 14",
+        "DT 15",
+        "DT 17",
+        "DT 18",
+
+),
+);
+*/
+    
+
+/* do include all that "stop at" nonsense from SBS Transit */
+
+
+?>
