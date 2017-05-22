@@ -4,7 +4,8 @@
   "description": "Fetches MRT Breakdown information and parses data into JSON (done in PHP) before the parsed data is used for Google Map filtering together with walking pace information to finetune the ETA information",
   "main": "archive.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node archive.js"
   },
   "repository": {
     "type": "git",

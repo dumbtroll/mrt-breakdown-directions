@@ -14,6 +14,8 @@ const intersect = require('intersect');
 var fullTextSearch = require('full-text-search');
 var search = new fullTextSearch();
 
+const port = process.env.PORT || 3000;
+
 var app = express();
 
 
@@ -181,7 +183,7 @@ next();
 
        /*
        note to self: MRT stations close around 11pm, so directions would have no MRT
-       stuff 
+       stuff
        */
        console.log('help cher my app is not working')
 
@@ -203,7 +205,7 @@ next();
 
 
 app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
+  console.log(`Server is up to port ${port}`);
 });
 
 
